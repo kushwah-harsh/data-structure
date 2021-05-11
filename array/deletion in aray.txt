@@ -1,0 +1,111 @@
+#include<iostream>
+using namespace std;
+int a[50],size;
+
+   void display()
+   {
+       for(int i=0;i<size;i++)
+       {
+           cout<<a[i]<<"\n";
+       }
+   }
+ 
+  void begining()
+  {
+      if(size-1==0)
+      {
+          cout<<"underflow";
+      }
+      else
+      {
+          for(int i=0;i<size-1;i++)
+          {
+              a[i]=a[i+1];
+              
+          }
+          size--;
+      }
+  }
+  void end()
+  {
+      if(size-1==0)
+      {
+          cout<<"underflow";
+      }
+      else
+      {
+          size--;
+      }
+  }
+  void position(int pos)
+  {
+      if(size-1==0)
+      {
+          cout<<"underflow";
+      }
+      else
+      {
+          for(int i=0;i<size-1;i++)
+          {
+              a[i]=a[i+1];
+          }
+          size--;
+      }
+  }
+  int main()
+  {
+     int c,ch,pos;
+     cout<<"enter the number of elements you want to enter in array ::"<<"\n";
+     cin>>size;
+     cout<<"enter array from here";
+     for(int i=0;i<size;i++)
+     {
+         cin>>a[i];
+     }
+     
+    g:
+    cout<<"  press 1 to delete from begining"<<"\n";
+    cout<<"  press 2 to delete from end"<<"\n";
+    cout<<"  press 3 to delete from specific  position"<<"\n";
+    cout<<"  press 4 to display"<<"\n";
+    cin>>ch;
+    switch(ch)
+    {
+        case 1:
+               begining();
+                break;
+           
+        case 2:
+               end();
+               break;
+           
+        case 3:
+               cout<<"enter position"<<"\n";
+               cin>>pos;
+               position(pos);
+                break;
+        case 4:
+               cout<<"displaying the operated array"<<"\n";
+               display();
+               break;
+           
+        
+    default:
+         cout<<"invalid input"<<"\n";
+                break;
+        
+    }
+    
+    
+    cout<<"press 0 to perform delete operation again"<<"\n";
+    cin>>c;
+    if(c==0)
+     goto g;
+     
+     
+     return 0;
+    
+     
+  }
+  
+  
